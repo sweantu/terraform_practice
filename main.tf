@@ -8,17 +8,18 @@ terraform {
 }
 
 provider "google" {
-  project = "de-zoomcamp-practice-451708"
-  region  = "asia-southeast1-b"
+  credentials = file(var.credentials)
+  project = var.project
+  region  = var.region
 }
 
 resource "google_storage_bucket" "terraform-bucket" {
-  name          = "de-zoomcamp-practice-451708-terraform-bucket"
-  location      = "asia"
+  name          = var.bucket_name
+  location      = var.location
   force_destroy = true
 }
 
 
 resource "google_bigquery_dataset" "terraform_dataset" {
-  dataset_id = "terraform_dataset"
+  dataset_id = var.dataset_id
 }
