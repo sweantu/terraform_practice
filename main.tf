@@ -17,3 +17,8 @@ resource "google_storage_bucket" "terraform-bucket" {
   location      = "asia"
   force_destroy = true
 }
+
+
+resource "google_bigquery_dataset" "terraform_dataset" {
+  dataset_id = "terraform_dataset"
+}

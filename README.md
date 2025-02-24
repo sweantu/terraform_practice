@@ -1,0 +1,1 @@
+export GOOGLE_CREDENTIALS="$HOME/.gcp/terraform-practice.json"
